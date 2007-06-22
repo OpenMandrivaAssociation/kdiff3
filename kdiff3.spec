@@ -1,6 +1,3 @@
-%define section Applications/Development/Tools
-%define title Kdiff3
-
 # Work around for different libtool use in kde 
 %define __libtoolize true
 
@@ -41,7 +38,7 @@ KDiff3 is a file and directory diff and merge tool which:
 # NOTE: please don't regenerate configure scripts below
 #perl -pi -e "s@/lib(\"|\b[^/])@/%_lib\1@g if /(kde|qt)_(libdirs|libraries)=/" configure
 
-%{?__cputoolize: %{__cputoolize} }
+#%{?__cputoolize: %{__cputoolize} }
 
 %configure
 %make
