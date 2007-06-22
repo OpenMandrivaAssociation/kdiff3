@@ -1,6 +1,6 @@
 %define name    kdiff3
-%define version 0.9.90
-%define release %mkrel 2
+%define version 0.9.92
+%define release %mkrel 1
 %define Summary Utility for comparing/merging up to three text files or directories
 
 %define section Applications/Development/Tools
