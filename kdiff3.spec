@@ -11,7 +11,7 @@ Group:		Development/Other
 Source:		kdiff3-%{version}.tar.bz2
 Url: 		http://kdiff3.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	kdelibs-devel
+BuildRequires:	kdebase-devel
 
 %description
 KDiff3 is a file and directory diff and merge tool which:
