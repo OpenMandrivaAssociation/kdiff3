@@ -1,17 +1,16 @@
-# Work around for different libtool use in kde 
-%define __libtoolize true
+%define svnrel 835723
 
 Summary:        %Summary
 Name:           kdiff3
-Version:        0.9.92
-Release:        %mkrel 1
+Version:        0.9.93
+Release:        %mkrel -c %svnrel 1
 Summary:	Summary Utility for comparing/merging up to three text files or directories
 License:	GPL
 Group:		Development/Other
-Source:		kdiff3-%{version}.tar.bz2
+Source:		kdiff3-%{version}-r%{svnrel}.tar.bz2
 Url: 		http://kdiff3.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	kdebase-devel
+BuildRequires:	kdebase4-devel
 
 %description
 KDiff3 is a file and directory diff and merge tool which:
@@ -26,41 +25,20 @@ KDiff3 is a file and directory diff and merge tool which:
 %setup -q
 
 %build
-#make -f admin/Makefile.common cvs
-
-#export QTDIR=%_prefix/%_lib/qt3
-#export KDEDIR=%_prefix
-
-#export LD_LIBRARY_PATH=$QTDIR/%_lib:$KDEDIR/%_lib:$LD_LIBRARY_PATH
-#export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH
-
-# Search for qt/kde libraries in the right directories (avoid patch)
-# NOTE: please don't regenerate configure scripts below
-#perl -pi -e "s@/lib(\"|\b[^/])@/%_lib\1@g if /(kde|qt)_(libdirs|libraries)=/" configure
-
-#%{?__cputoolize: %{__cputoolize} }
-
-%configure
+%cmake_kde4
 %make
 
 %install
 rm -rf %buildroot
-%makeinstall
+%makeinstall_std -C build
 
 desktop-file-install --vendor="" \
   --add-category="Qt" \
   --add-category="KDE" \
   --add-category="Development" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications/kde $RPM_BUILD_ROOT%{_datadir}/applnk/Development/*
+  --dir $RPM_BUILD_ROOT%{_kde_datadir}/applications/kde4 $RPM_BUILD_ROOT%{_kde_datadir}/applications/kde4/*.desktop
 
-rm -fr %{buildroot}%{_datadir}/applnk/Development/
-
-#mdk icons
-install -D -m 644 %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}.png %{buildroot}%{_liconsdir}/%{name}.png
-install -D -m 644 %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}.png %{buildroot}%{_iconsdir}/%{name}.png
-install -D -m 644 %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{name}.png %{buildroot}%{_miconsdir}/%{name}.png
-
-%find_lang %{name}
+%find_lang %{name} --with-html
 
 %clean
 rm -rf %buildroot
@@ -77,19 +55,9 @@ rm -rf %buildroot
 
 %files -f %{name}.lang
 %defattr(0755,root,root,0755)
-%{_bindir}/%{name}
-%{_libdir}/kde3/*.la
-%{_libdir}/kde3/*.so
-%defattr(0644,root,root,0755)
-%{_datadir}/apps/kdiff3/kdiff3_shell.rc
-%{_datadir}/apps/kdiff3part/kdiff3_part.rc
-%{_datadir}/applications/kde/*.desktop
-%{_datadir}/applnk/.hidden/*.desktop
-%{_datadir}/icons/*/*/apps/*.png
-%{_datadir}/services/*.desktop
-%{_miconsdir}/%{name}.png
-%{_iconsdir}/%{name}.png
-%{_liconsdir}/%{name}.png
-%{_mandir}/*/*
-%doc %_docdir/HTML/%{name}/*
-%doc %_docdir/HTML/*/%{name}/*
+%{_kde_bindir}/%{name}
+%{_kde_libdir}/kde4/*
+%{_kde_appsdir}/%name
+%{_kde_datadir}/applications/kde4/*.desktop
+%{_kde_iconsdir}/*/*/apps/*.png
+%{_kde_services}/*.desktop
