@@ -1,13 +1,11 @@
-%define svnrel 835723
-
 Summary:        %Summary
 Name:           kdiff3
 Version:        0.9.93
-Release:        %mkrel -c %svnrel 1
+Release:        %mkrel 1
 Summary:	Summary Utility for comparing/merging up to three text files or directories
-License:	GPL
+License:	GPLv2+
 Group:		Development/Other
-Source:		kdiff3-%{version}-r%{svnrel}.tar.bz2
+Source:		http://downloads.sourceforge.net/kdiff3/kdiff3-%{version}-3.tar.gz
 Url: 		http://kdiff3.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	kdebase4-devel
@@ -39,7 +37,7 @@ desktop-file-install --vendor="" \
   --add-category="Development" \
   --dir $RPM_BUILD_ROOT%{_kde_datadir}/applications/kde4 $RPM_BUILD_ROOT%{_kde_datadir}/applications/kde4/*.desktop
 
-%find_lang %{name} --with-html
+%find_lang %{name} %{name} kdiff3plugin --with-html
 
 %clean
 rm -rf %buildroot
