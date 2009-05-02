@@ -1,11 +1,11 @@
 Summary:        %Summary
 Name:           kdiff3
-Version:        0.9.94
+Version:        0.9.95
 Release:        %mkrel 1
 Summary:	Summary Utility for comparing/merging up to three text files or directories
 License:	GPLv2+
 Group:		Development/Other
-Source:		http://downloads.sourceforge.net/kdiff3/kdiff3-%{version}.tar.gz
+Source:		http://downloads.sourceforge.net/kdiff3/kdiff3-%{version}.tar.bz2
 Url: 		http://kdiff3.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	kdebase4-devel
