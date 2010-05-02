@@ -1,7 +1,7 @@
 Summary:        %Summary
 Name:           kdiff3
 Version:        0.9.95
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:	Summary Utility for comparing/merging up to three text files or directories
 License:	GPLv2+
 Group:		Development/Other
@@ -53,7 +53,7 @@ rm -rf %buildroot
 %endif
 
 %files -f %{name}.lang
-%defattr(0755,root,root,0755)
+%defattr(-,root,root,-)
 %{_kde_bindir}/%{name}
 %{_kde_libdir}/kde4/*
 %{_kde_appsdir}/%name
