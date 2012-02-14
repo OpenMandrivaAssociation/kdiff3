@@ -35,7 +35,11 @@ desktop-file-install --vendor="" \
   --add-category="Development" \
   --dir %{buildroot}%{_kde_datadir}/applications/kde4 %{buildroot}%{_kde_datadir}/applications/kde4/*.desktop
 
-%find_lang %{name} kdiff3plugin %{name}.lang --with-html
+%if %{mdvver} > 201100
+%find_lang %{name} kdiff3plugin kdiff3fileitemactionplugin %{name}.lang --with-html
+%else
+%find_lang %{name} %{name} kdiff3plugin kdiff3fileitemactionplugin --with-html
+%endif
 
 %clean
 %__rm -rf %{buildroot}
@@ -48,3 +52,4 @@ desktop-file-install --vendor="" \
 %{_kde_datadir}/applications/kde4/*.desktop
 %{_kde_iconsdir}/*/*/apps/*.png
 %{_kde_services}/*.desktop
+%{_datadir}/apps/kdiff3part/kdiff3_part.rc
