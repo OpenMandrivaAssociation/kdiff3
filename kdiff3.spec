@@ -1,13 +1,11 @@
-Summary:        %Summary
-Name:           kdiff3
-Version:        0.9.95
-Release:        %mkrel 3
+Name:		kdiff3
+Version:	0.9.96
+Release:	%mkrel 1
 Summary:	Summary Utility for comparing/merging up to three text files or directories
 License:	GPLv2+
 Group:		Development/Other
-Source:		http://downloads.sourceforge.net/kdiff3/kdiff3-%{version}.tar.bz2
+Source:		http://downloads.sourceforge.net/kdiff3/kdiff3-%{version}.tar.gz
 Url: 		http://kdiff3.sourceforge.net/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	kdebase4-devel
 BuildRequires:	desktop-file-utils
 
@@ -28,35 +26,25 @@ KDiff3 is a file and directory diff and merge tool which:
 %make
 
 %install
-rm -rf %buildroot
+%__rm -rf %{buildroot}
 %makeinstall_std -C build
 
 desktop-file-install --vendor="" \
   --add-category="Qt" \
   --add-category="KDE" \
   --add-category="Development" \
-  --dir $RPM_BUILD_ROOT%{_kde_datadir}/applications/kde4 $RPM_BUILD_ROOT%{_kde_datadir}/applications/kde4/*.desktop
+  --dir %{buildroot}%{_kde_datadir}/applications/kde4 %{buildroot}%{_kde_datadir}/applications/kde4/*.desktop
 
-%find_lang %{name} %{name} kdiff3plugin --with-html
+%find_lang %{name} kdiff3plugin %{name}.lang --with-html
 
 %clean
-rm -rf %buildroot
-
-%if %mdkversion < 200900
-%post
-%update_menus
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%endif
+%__rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
 %{_kde_bindir}/%{name}
 %{_kde_libdir}/kde4/*
-%{_kde_appsdir}/%name
+%{_kde_appsdir}/%{name}
 %{_kde_datadir}/applications/kde4/*.desktop
 %{_kde_iconsdir}/*/*/apps/*.png
 %{_kde_services}/*.desktop
