@@ -1,2 +1,4 @@
+removed_sources:
+  kdiff3-0.9.97.tar.gz: 1f2828c4b287b905bac64992b46a3e9231319547
 sources:
-  "kdiff3-0.9.97.tar.gz": 1f2828c4b287b905bac64992b46a3e9231319547
+  kdiff3-1.7.9.0.tar.gz: f255708f58fbb578f0e23372951aae65c52ba1c4
