@@ -1,6 +1,6 @@
 Name:		kdiff3
 Version:	1.7.9.0
-Release:	1
+Release:	2
 Summary:	Summary Utility for comparing/merging up to three text files or directories
 License:	GPLv2+
 Group:		Development/Other
