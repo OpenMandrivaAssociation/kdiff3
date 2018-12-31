@@ -13,6 +13,7 @@ BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5IconThemes)
 BuildRequires:	cmake(KF5Parts)
 BuildRequires:	cmake(KF5WidgetsAddons)
+BuildRequires:  cmake(Qt5PrintSupport)
 BuildRequires:	desktop-file-utils
 
 %description
