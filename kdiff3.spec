@@ -1,6 +1,6 @@
 Name:		kdiff3
-Version:	1.7.9.0
-Release:	2
+Version:	1.8.1
+Release:	1
 Summary:	Summary Utility for comparing/merging up to three text files or directories
 License:	GPLv2+
 Group:		Development/Other
@@ -50,7 +50,7 @@ KDiff3 is a file and directory diff and merge tool which:
 #%%{_datdir}/kde5/*
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/kdiff3fileitemaction.so
 %{_libdir}/qt5/plugins/kf5/parts/kdiff3part.so
-%{_datadir}/appdata/org.kde.kdiff3.appdata.xml
+%{_datadir}/metainfo/org.kde.kdiff3.appdata.xml
 %{_datadir}/applications/org.kde.kdiff3.desktop
 %{_datadir}/kservices5/kdiff3part.desktop
 %{_datadir}/kxmlgui5/kdiff3/kdiff3_shell.rc
