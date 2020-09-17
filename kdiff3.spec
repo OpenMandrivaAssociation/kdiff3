@@ -48,6 +48,6 @@ KDiff3 is a file and directory diff and merge tool which:
 %{_datadir}/kservices5/kdiff3part.desktop
 %{_datadir}/kxmlgui5/kdiff3/kdiff3_shell.rc
 %{_datadir}/kxmlgui5/kdiff3part/kdiff3_part.rc
-%{_mandir}/man1/kdiff3.1.xz
+%{_mandir}/man1/kdiff3.1.*
 %{_iconsdir}/hicolor/*/apps/kdiff3.*
 %{_docdir}/HTML/en/kdiff3/*
