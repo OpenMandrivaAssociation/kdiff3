@@ -1,11 +1,11 @@
 Name:		kdiff3
-Version:	1.8.1
+Version:	1.8.4
 Release:	1
 Summary:	Summary Utility for comparing/merging up to three text files or directories
 License:	GPLv2+
 Group:		Development/Other
-Source:		https://github.com/KDE/kdiff3/kdiff3-%{version}.tar.gz
-Url: 		https://github.com/KDE/kdiff3
+Url:		https://kde.org/applications/en/kdiff3
+Source0:	https://download.kde.org/stable/kdiff3/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5Crash)
@@ -13,7 +13,7 @@ BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5IconThemes)
 BuildRequires:	cmake(KF5Parts)
 BuildRequires:	cmake(KF5WidgetsAddons)
-BuildRequires:  cmake(Qt5PrintSupport)
+BuildRequires:	cmake(Qt5PrintSupport)
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(Qt5PrintSupport)
 
@@ -27,7 +27,7 @@ KDiff3 is a file and directory diff and merge tool which:
    * has options to highlight or hide changes in white-space or comments
 
 %prep
-%setup -q
+%autosetup -p1
 %cmake_kde5
 
 %build
