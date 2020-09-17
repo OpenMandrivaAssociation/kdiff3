@@ -37,17 +37,10 @@ KDiff3 is a file and directory diff and merge tool which:
 %install
 %ninja_install -C build
 
-#desktop-file-install --vendor="" \
-#  --add-category="Qt" \
-#  --add-category="KDE" \
-#  --add-category="Development" \
-#  --dir %{buildroot}%{_kde_datadir}/applications/kde5 %{buildroot}%{_kde_datadir}/applications/kde5/*.desktop
-
 %find_lang %{name} kdiff3plugin kdiff3fileitemactionplugin %{name}.lang --with-html
 
 %files -f %{name}.lang
 %{_bindir}/%{name}
-#%%{_datdir}/kde5/*
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/kdiff3fileitemaction.so
 %{_libdir}/qt5/plugins/kf5/parts/kdiff3part.so
 %{_datadir}/metainfo/org.kde.kdiff3.appdata.xml
@@ -56,5 +49,5 @@ KDiff3 is a file and directory diff and merge tool which:
 %{_datadir}/kxmlgui5/kdiff3/kdiff3_shell.rc
 %{_datadir}/kxmlgui5/kdiff3part/kdiff3_part.rc
 %{_mandir}/man1/kdiff3.1.xz
-%{_iconsdir}/hicolor/*/apps/kdiff3.*[gz]
+%{_iconsdir}/hicolor/*/apps/kdiff3.*
 %{_docdir}/HTML/en/kdiff3/*
