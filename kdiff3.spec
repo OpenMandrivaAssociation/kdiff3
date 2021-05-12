@@ -16,6 +16,7 @@ BuildRequires:	cmake(KF5WidgetsAddons)
 BuildRequires:	cmake(Qt5PrintSupport)
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(Qt5PrintSupport)
+BuildRequires:	boost-devel
 
 %description
 KDiff3 is a file and directory diff and merge tool which:
