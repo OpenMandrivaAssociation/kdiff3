@@ -16,6 +16,7 @@ BuildRequires:	cmake(KF5WidgetsAddons)
 BuildRequires:	cmake(Qt5PrintSupport)
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(Qt5PrintSupport)
+BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	boost-devel
 
 %description
