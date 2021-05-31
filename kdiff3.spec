@@ -49,7 +49,6 @@ sed -i 's|#include <QtGlobal>|#include <QtGlobal>\n#include <limits>|' src/TypeU
 %{_libdir}/qt5/plugins/kf5/parts/kdiff3part.so
 %{_datadir}/metainfo/org.kde.kdiff3.appdata.xml
 %{_datadir}/applications/org.kde.kdiff3.desktop
-%{_datadir}/kservices5/kdiff3part.desktop
 %{_datadir}/kxmlgui5/kdiff3/kdiff3_shell.rc
 %{_datadir}/kxmlgui5/kdiff3part/kdiff3_part.rc
 %{_mandir}/man1/kdiff3.1.*
