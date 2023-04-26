@@ -1,6 +1,6 @@
 Name:		kdiff3
-Version:	1.9.6
-Release:	2
+Version:	1.10.1
+Release:	1
 Summary:	Summary Utility for comparing/merging up to three text files or directories
 License:	GPLv2+
 Group:		Development/Other
@@ -54,3 +54,4 @@ sed -i 's|#include <QtGlobal>|#include <QtGlobal>\n#include <limits>|' src/TypeU
 %{_mandir}/man1/kdiff3.1.*
 %{_mandir}/*/man1/kdiff3.1.*
 %{_iconsdir}/hicolor/*/apps/kdiff3.*
+%{_datadir}/kservices5/kdiff3part.desktop
