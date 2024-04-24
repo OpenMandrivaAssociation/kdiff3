@@ -18,6 +18,7 @@ BuildRequires:	cmake(KF6WidgetsAddons)
 BuildRequires:  cmake(KF6XmlGui)
 BuildRequires:	desktop-file-utils
 BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6Core5Compat)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6PrintSupport)
 BuildRequires:  cmake(Qt6Test)
