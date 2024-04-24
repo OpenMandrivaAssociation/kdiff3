@@ -41,11 +41,11 @@ sed -i 's|#include <QtGlobal>|#include <QtGlobal>\n#include <limits>|' src/TypeU
 %cmake -DBUILD_WITH_QT6=ON
 
 %build
-%ninja -C build
+%make_build
 
 
 %install
-%ninja_install -C build
+%make_install -C build
 
 %find_lang %{name} kdiff3plugin kdiff3fileitemactionplugin diff_ext %{name}.lang --with-html
 
