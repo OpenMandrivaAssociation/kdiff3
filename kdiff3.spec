@@ -38,11 +38,9 @@ KDiff3 is a file and directory diff and merge tool which:
 %autosetup -p1
 sed -i 's|#include <QtGlobal>|#include <QtGlobal>\n#include <limits>|' src/TypeUtils.h
 
-%cmake -DBUILD_WITH_QT6=ON
-
 %build
+%cmake -DBUILD_WITH_QT6=ON
 %make_build
-
 
 %install
 %make_install -C build
