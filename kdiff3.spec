@@ -6,17 +6,23 @@ License:	GPLv2+
 Group:		Development/Other
 Url:		https://kde.org/applications/en/kdiff3
 Source0:	https://download.kde.org/stable/kdiff3/%{name}-%{version}.tar.xz
-BuildRequires:	cmake(KF5I18n)
-BuildRequires:	cmake(KF5CoreAddons)
-BuildRequires:	cmake(KF5Crash)
-BuildRequires:	cmake(KF5DocTools)
-BuildRequires:	cmake(KF5IconThemes)
-BuildRequires:	cmake(KF5Parts)
-BuildRequires:	cmake(KF5WidgetsAddons)
-BuildRequires:	cmake(Qt5PrintSupport)
+BuildRequires:	cmake(KF6I18n)
+BuildRequires:	cmake(KF6CoreAddons)
+BuildRequires:  cmake(KF6Config)
+BuildRequires:	cmake(KF6Crash)
+BuildRequires:	cmake(KF6DocTools)
+BuildRequires:	cmake(KF6IconThemes)
+BuildRequires:  cmake(KF6KIO)
+BuildRequires:	cmake(KF6Parts)
+BuildRequires:	cmake(KF6WidgetsAddons)
+BuildRequires:  cmake(KF6XmlGui)
 BuildRequires:	desktop-file-utils
-BuildRequires:	pkgconfig(Qt5PrintSupport)
-BuildRequires:	pkgconfig(Qt5Test)
+BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6Core5Compat)
+BuildRequires:	cmake(Qt6Gui)
+BuildRequires:	cmake(Qt6PrintSupport)
+BuildRequires:  cmake(Qt6Test)
+BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	boost-devel
 
 %description
@@ -32,26 +38,20 @@ KDiff3 is a file and directory diff and merge tool which:
 %autosetup -p1
 sed -i 's|#include <QtGlobal>|#include <QtGlobal>\n#include <limits>|' src/TypeUtils.h
 
-%cmake_kde5
-
 %build
-%ninja -C build
-
+%cmake -DBUILD_WITH_QT6=ON
+%make_build
 
 %install
-%ninja_install -C build
+%make_install -C build
 
 %find_lang %{name} kdiff3plugin kdiff3fileitemactionplugin diff_ext %{name}.lang --with-html
 
 %files -f %{name}.lang
 %{_bindir}/%{name}
-%{_libdir}/qt5/plugins/kf5/kfileitemaction/kdiff3fileitemaction.so
-%{_libdir}/qt5/plugins/kf5/parts/kdiff3part.so
+%{_libdir}/plugins/kf6/kfileitemaction/kdiff3fileitemaction.so
 %{_datadir}/metainfo/org.kde.kdiff3.appdata.xml
 %{_datadir}/applications/org.kde.kdiff3.desktop
-%{_datadir}/kxmlgui5/kdiff3/kdiff3_shell.rc
-%{_datadir}/kxmlgui5/kdiff3part/kdiff3_part.rc
 %{_mandir}/man1/kdiff3.1.*
 %{_mandir}/*/man1/kdiff3.1.*
 %{_iconsdir}/hicolor/*/apps/kdiff3.*
-%{_datadir}/kservices5/kdiff3part.desktop
