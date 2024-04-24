@@ -49,13 +49,13 @@ sed -i 's|#include <QtGlobal>|#include <QtGlobal>\n#include <limits>|' src/TypeU
 
 %files -f %{name}.lang
 %{_bindir}/%{name}
-%{_libdir}/qt5/plugins/kf5/kfileitemaction/kdiff3fileitemaction.so
-%{_libdir}/qt5/plugins/kf5/parts/kdiff3part.so
+#{_libdir}/qt5/plugins/kf5/kfileitemaction/kdiff3fileitemaction.so
+#{_libdir}/qt5/plugins/kf5/parts/kdiff3part.so
 %{_datadir}/metainfo/org.kde.kdiff3.appdata.xml
 %{_datadir}/applications/org.kde.kdiff3.desktop
-%{_datadir}/kxmlgui5/kdiff3/kdiff3_shell.rc
-%{_datadir}/kxmlgui5/kdiff3part/kdiff3_part.rc
+#{_datadir}/kxmlgui5/kdiff3/kdiff3_shell.rc
+#{_datadir}/kxmlgui5/kdiff3part/kdiff3_part.rc
 %{_mandir}/man1/kdiff3.1.*
 %{_mandir}/*/man1/kdiff3.1.*
 %{_iconsdir}/hicolor/*/apps/kdiff3.*
-%{_datadir}/kservices5/kdiff3part.desktop
+#{_datadir}/kservices5/kdiff3part.desktop
