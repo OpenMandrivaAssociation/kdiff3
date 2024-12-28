@@ -6,6 +6,7 @@ License:	GPLv2+
 Group:		Development/Other
 Url:		https://kde.org/applications/en/kdiff3
 Source0:	https://download.kde.org/stable/kdiff3/%{name}-%{version}.tar.xz
+BuildRequires:  appstream
 BuildRequires:	cmake(KF6I18n)
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:  cmake(KF6Config)
@@ -23,6 +24,7 @@ BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6PrintSupport)
 BuildRequires:  cmake(Qt6Test)
 BuildRequires:	cmake(Qt6Widgets)
+BuildRequires:  pkgconfig(icu-uc)
 BuildRequires:	boost-devel
 
 %description
