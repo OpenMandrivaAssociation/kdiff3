@@ -7,6 +7,7 @@ Group:		Development/Other
 Url:		https://kde.org/applications/en/kdiff3
 Source0:	https://download.kde.org/stable/kdiff3/%{name}-%{version}.tar.xz
 BuildRequires:  appstream
+BuildRequires:  make
 BuildRequires:	cmake(KF6I18n)
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:  cmake(KF6Config)
