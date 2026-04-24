@@ -52,7 +52,7 @@ sed -i 's|#include <QtGlobal>|#include <QtGlobal>\n#include <limits>|' src/TypeU
 
 %files -f %{name}.lang
 %{_bindir}/%{name}
-%{_libdir}/plugins/kf6/kfileitemaction/kdiff3fileitemaction.so
+#{_libdir}/plugins/kf6/kfileitemaction/kdiff3fileitemaction.so
 %{_datadir}/metainfo/org.kde.kdiff3.appdata.xml
 %{_datadir}/applications/org.kde.kdiff3.desktop
 %{_mandir}/man1/kdiff3.1.*
